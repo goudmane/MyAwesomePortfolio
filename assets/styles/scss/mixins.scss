@@ -1,0 +1,155 @@
+@use 'variables' as *;
+
+@mixin button {
+    color: $gold;
+    background-color: transparent;
+    border: 1px solid $gold;
+    border-radius: $border-radius;
+    font-size: $fz-xs;
+    font-family: $font-mono;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: $transition;
+    padding: 1.25rem 1.75rem;
+
+    &:hover,
+    &:focus,
+    &:active {
+        outline: none;
+        box-shadow: 3px 3px 0 0 $gold;
+        transform: translate(-4px, -4px);
+    }
+
+    &:after {
+        display: none !important;
+    }
+}
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin link {
+    display: inline-block;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    color: inherit;
+    position: relative;
+    transition: $transition;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: $gold;
+        outline: 0;
+    }
+}
+
+@mixin inlineLink {
+    display: inline-block;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    position: relative;
+    transition: $transition;
+    color: $gold;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $gold;
+        outline: 0;
+
+        &:after {
+            width: 100%;
+        }
+
+        >* {
+            color: $gold !important;
+            transition: $transition;
+        }
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 1px;
+        position: relative;
+        bottom: 0.37em;
+        background-color: $gold;
+        transition: $transition;
+        opacity: 0.5;
+    }
+}
+
+@mixin smallButton {
+    @include button;
+    padding: 0.75rem 1rem;
+}
+
+@mixin bigButton {
+    @include button;
+    padding: 1.25rem 1.75rem;
+    font-size: $fz-sm;
+}
+
+@mixin boxShadow {
+    box-shadow: 0 10px 30px -15px $navy-shadow;
+    transition: $transition;
+
+    &:hover,
+    &:focus {
+        box-shadow: 0 20px 30px -15px $navy-shadow;
+    }
+}
+
+@mixin fancyList {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: $fz-lg;
+
+    li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 10px;
+
+        &:before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: $gold;
+        }
+    }
+}
+
+@mixin resetList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin sideStyles($side) {
+    width: 40px;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    color: $light-slate;
+
+    @media (max-width: 1080px) {
+        #{$side}: 20px; // Use interpolation to dynamically set the property
+    }
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
