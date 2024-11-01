@@ -8,9 +8,18 @@
     
     "resume": "Curriculum vitae",
 
-
     "whereIveWorked": "Où j'ai travaillé",
     "aboutMe": "À propos de moi",
-    "range": "Période"
+    "range": "Période",
+    "someOfMyWorks": "Quelques réalisations que j'ai construites",
+
+    "sayHello": "Dites bonjour",
+    "whatsNext": "Quelle est la suite ?",
+    "getIntoTouch": "Contactez-moi",
+    "builtBy": "Construit par",
+    "designInspiredBy": "Design inspiré par",
+
+
+    "":""
   }
 }

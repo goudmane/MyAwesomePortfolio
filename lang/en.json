@@ -10,6 +10,16 @@
 
     "whereIveWorked": "Where I’ve Worked",
     "aboutMe": "About me",
-    "range": "Range"
+    "range": "Range",
+    "someOfMyWorks": "Some Things I’ve Built",
+
+    "sayHello": "Say hello",
+    "whatsNext": "What’s Next?",
+    "getIntoTouch": "Get In Touch",
+    "builtBy": "Built by",
+    "designInspiredBy": "Design Inspired by",
+
+    
+    "":""
   }
 }

@@ -29,7 +29,7 @@ export default defineNuxtConfig({
       { code: 'fr', file: 'fr.json' }
     ],
     defaultLocale: 'en',
-    lazy: true,
+    lazy: false,
     langDir: 'lang/',
   }
 })

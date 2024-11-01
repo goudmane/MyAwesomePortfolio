@@ -1,12 +1,12 @@
 ---
 title: Skills
 skills:
-  - JavaScript
-  - React
   - PHP
-  - Node.js
-  - WordPress
+  - SQL
   - Laravel
-  - Angular
-  - MySQL
+  - JavaScript
+  - Nuxt/Vue.js
+  - Node.js
+  - Docker
+  - Git
 ---

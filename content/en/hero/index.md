@@ -4,12 +4,15 @@ items:
     text: "Hi, my name is"
     class: ''
   - tag: 'h2'
-    text: 'Goudmane Oualid.'
+    text: 'Goudmane Oualid'
     class: 'big-heading'
   - tag: 'h3'
-    text: 'I build web applications.'
-    class: 'big-heading'
+    text: 'Full Stack Developer | <a href="https://laravel.com" class="laravel">Laravel</a> & <a href=https://nuxt.com/" class="nuxt">Nuxt</a>'
+    class: 'medium-heading'
   - tag: 'p'
-    text: "I'm a Full Stack Developer specializing in creating exceptional web solutions. Currently, I'm focusing on frameworks like Laravel and Vue.js to deliver modern and efficient web experiences."
+    text: "With expertise in web development across various technologies, I build efficient, high-quality applications that deliver seamless user experiences. My focus is on creating scalable and innovative solutions tailored to meet today’s digital demands."
     class: ''
+  - tag: 'a'
+    text: 'Say hello'
+    class: 'email-link'
 ---

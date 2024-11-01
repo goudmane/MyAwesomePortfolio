@@ -1,32 +1,34 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { usePrefersReducedMotion } from '@/composables/usePrefersReducedMotion';
 
 const email = useAppConfig().email;
+const { locale } = useI18n();
 
 const revealContainer = ref<HTMLElement | null>(null);
-const prefersReducedMotion = usePrefersReducedMotion();
+const contactStatment = ref<any>(null);
 
-onMounted(() => {
-  /* if (!prefersReducedMotion) {
-    sr.reveal(revealContainer.value, srConfig());
-  } */
+
+const fetchcontact = async () => {
+  const contactStatmentData = await queryContent(`/${locale.value}/contact`).findOne();
+  contactStatment.value = contactStatmentData || null;
+  console.log(contactStatmentData);
+  
+};
+
+onMounted(async () => {
+  await fetchcontact();
 });
 </script>
 
 <template>
   <section class="contact-section" id="contact" ref="revealContainer">
-    <h2 class="numbered-heading overline">What’s Next?</h2>
+    <h2 class="numbered-heading overline">{{ $t('lang.whatsNext') }}</h2>
 
-    <h2 class="title">Get In Touch</h2>
+    <h2 class="title">{{ $t('lang.getIntoTouch') }}</h2>
 
-    <p>
-      Bien que je sois actuellement à la recherche de nouvelles opportunités, ma boîte de
-      réception est toujours ouverte. Que vous ayez une question ou que vous souhaitiez simplement
-      dire bonjour, je ferai de mon mieux pour vous répondre !
-    </p>
+    <ContentRendererMarkdown :value="contactStatment" v-if="contactStatment" />
 
-    <a class="email-link" :href="`mailto:${email}`">Dis bonjour</a>
+    <a class="email-link" :href="`mailto:${email}`">{{ $t('lang.sayHello') }}</a>
   </section>
 </template>
 

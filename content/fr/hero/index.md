@@ -1,15 +1,18 @@
 ---
 items:
   - tag: 'h1'
-    text: "Salut, je m'appelle"
+    text: "Bonjour, je m'appelle"
     class: ''
   - tag: 'h2'
-    text: 'Goudmane Oualid.'
+    text: 'Goudmane Oualid'
     class: 'big-heading'
   - tag: 'h3'
-    text: 'Je développe des applications web.'
-    class: 'big-heading'
+    text: 'Développeur Full Stack | <a href="https://laravel.com" class="laravel">Laravel</a> & <a href="https://nuxt.com/" class="nuxt">Nuxt</a>'
+    class: 'medium-heading'
   - tag: 'p'
-    text: "Je suis un développeur Full Stack spécialisé dans la création de solutions web exceptionnelles. Actuellement, je me concentre sur des frameworks comme Laravel et Vue.js pour offrir des expériences web modernes et efficaces."
+    text: "Fort d'une expertise en développement web sur diverses technologies, je conçois des applications efficaces et de haute qualité offrant une expérience utilisateur fluide. Mon objectif est de créer des solutions évolutives et innovantes, adaptées aux exigences numériques d'aujourd'hui."
     class: ''
+  - tag: 'a'
+    text: 'Dites bonjour'
+    class: 'email-link'
 ---

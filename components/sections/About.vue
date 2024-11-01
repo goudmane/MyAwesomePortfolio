@@ -13,7 +13,7 @@
 
       <div class="picture">
         <div class="wrapper">
-          <img src="/static/me.jpg" alt="Goudmane Oualid Picture" class="img"/>
+          <img src="/static/me.jpg" alt="Goudmane Oualid Picture" class="img" />
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@ const about = ref<any>(null);
 const skills = ref<string[]>([]);
 
 const fetchAboutAndSkills = async () => {
-  
+
   const aboutData = await queryContent(`/${locale.value}/about`).findOne();
   about.value = aboutData || null;
 
@@ -48,12 +48,14 @@ onMounted(() => {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-delay');
+          setTimeout(() => {
+            entry.target.classList.add('animate-delay');
+          }, 200);
         }
       });
     },
     {
-      threshold: 0.5,
+      threshold: 0.25,
     }
   );
 
@@ -64,9 +66,7 @@ onMounted(() => {
 </script>
 
 
-<style lang="scss" >
-
-
+<style lang="scss">
 .about-section {
   max-width: 1000px;
   margin: 0 auto;
@@ -113,6 +113,7 @@ onMounted(() => {
     position: relative;
     max-width: 300px;
     margin-top: 50px;
+
     .wrapper {
       /* @include boxShadow; */
       display: block;
@@ -173,19 +174,19 @@ onMounted(() => {
 }
 
 .animate-delay {
-  animation-duration: 2s;
-  animation-fill-mode: both;
-  animation-name: animate-delay;
+  animation: animate-delay 500ms cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  transform-origin: bottom;
+  opacity: 0;
 }
 
 @keyframes animate-delay {
   0% {
     opacity: 0;
-    transform: translateY(10px);
-    -webkit-transform: translateY(30px);
-    -moz-transform: translateY(20px);
-    -ms-transform: translateY(20px);
-    -o-transform: translateY(20px);
+    transform: translateY(20px);
+    -webkit-transform: translateY(40px);
+    -moz-transform: translateY(40px);
+    -ms-transform: translateY(40px);
+    -o-transform: translateY(40px);
   }
 
   100% {
@@ -200,10 +201,10 @@ onMounted(() => {
 
 .content {
   opacity: 0;
-  transform: translateY(10px);
-  -webkit-transform: translateY(20px);
-  -moz-transform: translateY(20px);
-  -ms-transform: translateY(20px);
-  -o-transform: translateY(20px);
+  transform: translateY(20px);
+  -webkit-transform: translateY(40px);
+  -moz-transform: translateY(40px);
+  -ms-transform: translateY(40px);
+  -o-transform: translateY(40px);
 }
 </style>

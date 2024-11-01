@@ -21,9 +21,12 @@ const socialMedia = [
       </ul>
     </div>
     <div class="credit" tabindex="-1">
-      <a href="https://github.com/goudmane">
-        <div>Construit par Goudmane Oualid</div>
-      </a>
+      <div>
+        {{ $t('lang.builtBy') }}
+        <a href="https://github.com/goudmane">Goudmane Oualid</a>
+        {{ $t('lang.designInspiredBy') }}
+        <a class="bchiang7" href="https://v4.brittanychiang.com/" target="_blank" rel="noopener noreferrer">bchiang7</a>
+      </div>
     </div>
   </footer>
 </template>
@@ -78,6 +81,12 @@ const socialMedia = [
 
   a {
     padding: 10px;
+  }
+}
+
+.bchiang7{
+  &:hover, &:focus {
+      color: #64ffda;
   }
 }
 </style>

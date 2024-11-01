@@ -1,6 +1,6 @@
 <template>
   <section id="projects" class="projects-section">
-    <h2 class="numbered-heading">Some Things I’ve Built</h2>
+    <h2 class="numbered-heading">{{ $t('lang.someOfMyWorks') }}</h2>
 
     <ul class="projects-grid">
       <li v-for="(project, index) in featuredProjects" :key="index" class="project">

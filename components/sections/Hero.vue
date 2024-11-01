@@ -7,12 +7,13 @@
         :key="i"
         :style="{ transitionDelay: `${(i + 1) * 100}ms` }"
       >
-        <component :is="item.tag" :class="item.class">
-          {{ item.text }}
+        <component :is="item.tag" :class="item.class" v-html="item.text"
+          :href="(item.class === 'email-link') ? emailLink : null"
+        >
+         
         </component>
       </div>
     </TransitionGroup>
-   
   </section>
 </template>
 
@@ -38,6 +39,7 @@ onMounted(async () => {
   isMounted.value = true;
 });
 
+const emailLink = computed(() => `mailto:${useAppConfig().email}`);
 const isLoading = computed(() => isMounted.value ? loaderStore.loading : true);
 </script>
 
@@ -71,17 +73,32 @@ const isLoading = computed(() => isMounted.value ? loaderStore.loading : true);
     margin-top: 10px;
     color: $slate;
     line-height: 0.9;
+    span.gold {
+      color: $gold;
+    }
   }
 
   p {
     margin: 20px 0 0;
-    max-width: 540px;
+    max-width: 720px;
+    @media (max-width: 480px) and (min-height: 700px) {
+      max-width: 540px;  
+    }
   }
 
   .email-link {
     @include bigButton; 
     margin-top: 50px;
   }
+
+  .medium-heading {
+    .laravel{
+      color:$laravel;
+    }
+    .nuxt{
+      color:$nuxt;
+    }
+  }  
 }
 
 

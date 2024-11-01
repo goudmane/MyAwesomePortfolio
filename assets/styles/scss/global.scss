@@ -114,6 +114,7 @@ main {
     }
 
     &.fillHeight {
+        counter-reset: section;
         padding: 0 150px;
 
         @media (max-width: 1080px) {
@@ -167,7 +168,8 @@ h2.big-heading::first-letter {
 
 .medium-heading {
     margin: 0;
-    font-size: clamp(40px, 8vw, 60px);
+    /* font-size: clamp(40px, 8vw, 60px); */
+    font-size: clamp(20px, 4vw, 40px);
 }
 
 .numbered-heading {
@@ -182,7 +184,7 @@ h2.big-heading::first-letter {
     &:before {
         position: relative;
         bottom: 4px;
-        counter-increment: section;
+        counter-increment: section ;
         content: '0' counter(section) '.';
         margin-right: 10px;
         color: $gold;
@@ -439,4 +441,17 @@ code {
         text-transform: uppercase;
         letter-spacing: 0.1em;
     }
+}
+
+.keyword{
+    font-weight: 600;
+    color: $lightest-slate;
+}
+
+.laravel{
+    color:$laravel;
+}
+
+.nuxt{
+    color:$nuxt;
 }

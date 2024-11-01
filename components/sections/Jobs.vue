@@ -43,8 +43,10 @@ const jobsData = ref([]);
 
 // Function to fetch job data based on the current locale
 const fetchJobsData = async () => {
-  const dataJobs = await queryContent(`/${locale.value}/jobs`).find();
-  jobsData.value = dataJobs; // Update the jobs data
+  const dataJobs = await queryContent(`/${locale.value}/jobs`).sort({ 'date': -1 }).find();
+  jobsData.value = dataJobs;
+  /* console.log(dataJobs); */
+  
 };
 
 onMounted(async () => {
