@@ -1,75 +1,48 @@
-# Nuxt 3 Minimal Starter
+# MyAwesomePortfolio
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Project Overview
 
-## Setup
+**MyAwesomePortfolio** is a stunning portfolio website created to showcase my journey and skills as a **Full Stack Developer**. Developed using **Nuxt 3**, this portfolio highlights my expertise in crafting dynamic and responsive web applications.
 
-Make sure to install the dependencies:
+## Technologies Used
 
-```bash
-# npm
-npm install
+- **Framework**: 
+  - <span>Nuxt 3</span>
+  
+- **Tools**: 
+  - **Git**
+  - **Nitro**
+  - **Netlify**
 
-# pnpm
-pnpm install
+## Features
 
-# yarn
-yarn install
+- **Fully Responsive Design**: The portfolio adapts seamlessly across devices, ensuring an optimal viewing experience.
+- **Dynamic Content**: Utilizes **Nuxt 3** for server-side rendering, allowing for faster page loads and enhanced SEO.
+- **Interactive User Interface**: Engaging design with smooth transitions and animations, creating a captivating user experience.
+- **Showcase Projects**: Highlights featured projects with detailed descriptions and links to live demos or GitHub repositories.
 
-# bun
-bun install
-```
+## Installation
 
-## Development Server
+To run this project locally, follow these steps:
 
-Start the development server on `http://localhost:3000`:
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-```bash
-# npm
-npm run dev
+2. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
 
-# pnpm
-pnpm run dev
+## Deployment
 
-# yarn
-yarn dev
+This portfolio is deployed using Netlify and optimized with Nitro for fast performance. You can view the live version [here](https://goudmane.netlify.app/).
 
-# bun
-bun run dev
-```
+## Contribution
 
-## Production
+Contributions are welcome! Feel free to submit a pull request or open an issue for suggestions or improvements.
 
-Build the application for production:
+## Contact
 
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+For inquiries or collaboration, please reach out to me via [LinkedIn](https://www.linkedin.com/in/o-goudmane/) or [GitHub](https://github.com/goudmane/).
