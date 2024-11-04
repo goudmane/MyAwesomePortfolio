@@ -1,8 +1,6 @@
 <template>
-  <header 
- 
-    class="header"
-  >
+    <header :class="{'scroll-up': scrollDirection === 'up', 'scroll-down': scrollDirection === 'down', 'scrolled-to-top': scrolledToTop}" class="header">
+
     <slot></slot>
   </header>
 </template>
@@ -10,7 +8,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
 
-// Define props and logic as needed
 const props = defineProps({
   scrollDirection: {
     type: String,
@@ -24,37 +21,34 @@ const props = defineProps({
 
 const scrollDirection = ref('down');
 const scrolledToTop = ref(true);
-const prevScroll = ref(0); // Store the previous scroll position
+const prevScroll = ref(0);
 
-// Handle scroll logic
 const handleScroll = () => {
   const currentScroll = window.scrollY;
 
-  // Determine if scrolled to the top
   scrolledToTop.value = currentScroll < 50;
 
-  // Determine scroll direction
   if (currentScroll > 50) {
     scrollDirection.value = (currentScroll > prevScroll.value) ? 'down' : 'up';
   }
 
-  prevScroll.value = currentScroll; // Update previous scroll position
+  prevScroll.value = currentScroll;
 };
 
-// Add scroll event listener on mount
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
 });
 
-// Remove scroll event listener before unmount
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll);
 });
+
 </script>
 
 <style lang="scss" scoped>
 .header {
-  @include flexBetween; /* Assuming this mixin aligns items */
+  @include flexBetween;
+  /* Assuming this mixin aligns items */
   position: fixed;
   top: 0;
   z-index: 11;

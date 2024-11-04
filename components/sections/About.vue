@@ -13,8 +13,16 @@
 
       <div class="picture">
         <div class="wrapper">
-          <img src="/static/me.jpg" alt="Goudmane Oualid Picture" class="img" />
+          <img src="public/static/me.jpeg" alt="Goudmane Oualid Picture" class="img" />
         </div>
+        <!-- <div class="hex">
+          <div class="hex-border">
+            <div class="hex-background">
+              <img src="public/static/me.jpeg" alt="Goudmane Oualid Picture" class="img" />
+            </div>
+          </div>
+        </div> -->
+
       </div>
     </div>
   </section>
@@ -67,7 +75,49 @@ onMounted(() => {
 
 
 <style lang="scss">
+.hex {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: 440px; /* Outer width */
+  height: 394px; /* Outer height */
+  -webkit-clip-path: polygon(25% 3.5%, 75% 3.5%, 100% 50%, 75% 96.5%, 25% 96.5%, 0% 50%);
+  clip-path: polygon(25% 3.5%, 75% 3.5%, 100% 50%, 75% 96.5%, 25% 96.5%, 0% 50%);
+  background-color: $gold; /* Hexagon border color */
+}
+
+/* Inner hexagon to create gap between border and image */
+.hex-border {
+  position: absolute;
+  top: 5px; /* Gap from the border */
+  left: 5px; /* Gap from the border */
+  width: calc(100% - 10px); /* Adjust size to create the gap */
+  height: calc(100% - 10px); /* Adjust size to create the gap */
+  -webkit-clip-path: inherit;
+  clip-path: inherit;
+  background-color: transparent; /* Inner hexagon background color */
+}
+
+/* Inner hexagon for image */
+.hex-background {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+}
+
+/* Image inside hexagon */
+.hex .img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
 .about-section {
+  $border-radius: 50%;
   max-width: 1000px;
   margin: 0 auto;
 
@@ -164,7 +214,7 @@ onMounted(() => {
       }
 
       &:after {
-        border: 2px solid $gold;
+        border: 5px solid $gold;
         top: 20px;
         left: 20px;
         z-index: -1;

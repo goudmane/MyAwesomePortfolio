@@ -3,9 +3,9 @@
     <h2 class="numbered-heading">{{ $t('lang.someOfMyWorks') }}</h2>
 
     <ul class="projects-grid">
-      <li v-for="(project, index) in featuredProjects" :key="index" class="project">
+      <li v-for="(project, index) in featuredProjectsData" :key="index" class="project">
         <div class="project-content">
-          <p class="project-overline">Featured Project</p>
+          <p class="project-overline">{{ $t('lang.featuredProject') }}</p>
           <h3 class="project-title">
             <a :href="project.github">{{ project.title }}</a>
           </h3>
@@ -17,10 +17,10 @@
 
           <div class="project-links">
             <a v-if="project.github" :href="project.github" aria-label="GitHub Link">
-              <!-- <GitHubIcon /> -->
+              <Icon name='icon-park-outline:github-one' />
             </a>
             <a v-if="project.external" :href="project.external" aria-label="External Link" class="external">
-              <!-- <ExternalIcon /> -->
+              <IconExternal />
             </a>
           </div>
         </div>
@@ -39,11 +39,18 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 
-const { data: featuredProjects } = await useAsyncData('featured', () => queryContent('/featured').find())
+const { locale } = useI18n();
+const featuredProjectsData = ref<any>(null);
 
+const fetchFeaturedProjects = async () => {
+  const featuredProjects = await queryContent(`/${locale.value}/featured`).sort({ 'order': 1 }).find();
+  featuredProjectsData.value = featuredProjects || null;
+};
 
-onMounted(() => {
-  // Handle animations or other mounted logic here if necessary
+onMounted(async () => {
+  requestIdleCallback(async () => {
+    await fetchFeaturedProjects();
+  });
 });
 </script>
 
@@ -263,6 +270,7 @@ onMounted(() => {
       margin-top: 10px;
       margin-left: -10px;
       color: $lightest-slate;
+      align-items: flex-end;
 
       a {
         @include flexCenter;

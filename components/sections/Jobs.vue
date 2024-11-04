@@ -45,8 +45,6 @@ const jobsData = ref([]);
 const fetchJobsData = async () => {
   const dataJobs = await queryContent(`/${locale.value}/jobs`).sort({ 'date': -1 }).find();
   jobsData.value = dataJobs;
-  /* console.log(dataJobs); */
-  
 };
 
 onMounted(async () => {

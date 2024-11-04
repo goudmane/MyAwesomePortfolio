@@ -11,8 +11,6 @@ const contactStatment = ref<any>(null);
 const fetchcontact = async () => {
   const contactStatmentData = await queryContent(`/${locale.value}/contact`).findOne();
   contactStatment.value = contactStatmentData || null;
-  console.log(contactStatmentData);
-  
 };
 
 onMounted(async () => {

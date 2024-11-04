@@ -22,8 +22,8 @@
           </li>
         </TransitionGroup>
         <Transition tag="div" name="fadedown">
-          <a v-if="!isLoading" href="/resume.pdf" class="resume-button" target="_blank"
-            rel="noopener noreferrer">{{ $t('lang.resume') }}</a>
+          <a v-if="!isLoading" :href="`/static/pdf/Goudmane Oualid ${currentLang}.pdf`" class="resume-button" target="_blank"
+            rel="noopener noreferrer" download>{{ $t('lang.resume') }}</a>
         </Transition>
         <Transition tag="div" name="fadedown">
           <LangSwitcher></LangSwitcher>
@@ -35,8 +35,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
-import IconHex from '../icons/IconHex.vue'
-import IconLogo from '../icons/IconLogo.vue'
+const { locale } = useI18n();
 
 
 
@@ -47,6 +46,7 @@ const scrollDirection = ref('down');
 const scrolledToTop = ref(true);
 const prevScroll = ref(0);
 const isLoading = computed(() => isMounted.value ? useLoaderStore().loading : true);
+const currentLang = computed(() => locale.value);
 
 
 onMounted(() => {
