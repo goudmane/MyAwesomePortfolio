@@ -1,11 +1,6 @@
 <script setup lang="ts">
 
-
-const socialMedia = [
-  /* { name: 'GitHub', url: 'https://github.com/goudmane' },
-  { name: 'Twitter', url: 'https://twitter.com/goudmane' },
-  { name: 'LinkedIn', url: 'https://linkedin.com/in/goudmane' }, */
-];
+const socialMedia = useAppConfig().socialMedia;
 </script>
 
 
@@ -13,9 +8,9 @@ const socialMedia = [
   <footer class="footer">
     <div class="social-links">
       <ul>
-        <li v-for="(media, i) in socialMedia" :key="i">
-          <a :href="media.url" :aria-label="media.name">
-            <!-- <Icon :name="media.name" /> -->
+        <li v-for="(item, index) in socialMedia" :key="index">
+          <a :href="item.url" :aria-label="item.name" target="_blank" rel="noreferrer">
+            <Icon :name="item.icon" />
           </a>
         </li>
       </ul>

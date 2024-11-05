@@ -22,19 +22,23 @@
           </li>
         </TransitionGroup>
         <Transition tag="div" name="fadedown">
-          <a v-if="!isLoading" :href="`/static/pdf/Goudmane Oualid ${currentLang}.pdf`" class="resume-button" target="_blank"
-            rel="noopener noreferrer" download>{{ $t('lang.resume') }}</a>
+          <ResumeButton :isLoading="isLoading" />
         </Transition>
         <Transition tag="div" name="fadedown">
           <LangSwitcher></LangSwitcher>
         </Transition>
       </StyledLinks>
+
+      <Transition tag="div" name="fadedown">
+        <Menu></Menu>
+      </Transition>
     </StyledNav>
   </StyledHeader>
 </template>
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
+import Menu from './Menu.vue';
 const { locale } = useI18n();
 
 
@@ -65,6 +69,11 @@ onMounted(() => {
     height: 42px;
     position: relative;
     z-index: 1;
+
+    > *{
+      width: 100%;
+      height: 100%;
+    }
 
     .hex-container {
       position: absolute;
