@@ -1,25 +1,5 @@
-<script setup lang="ts">
-import { ref, onMounted } from 'vue';
-
-const email = useAppConfig().email;
-const { locale } = useI18n();
-
-const revealContainer = ref<HTMLElement | null>(null);
-const contactStatment = ref<any>(null);
-
-
-const fetchcontact = async () => {
-  const contactStatmentData = await queryContent(`/${locale.value}/contact`).findOne();
-  contactStatment.value = contactStatmentData || null;
-};
-
-onMounted(async () => {
-  await fetchcontact();
-});
-</script>
-
 <template>
-  <section class="contact-section" id="contact" ref="revealContainer">
+  <section id="contact" class="contact-section" ref="container">
     <h2 class="numbered-heading overline">{{ $t('lang.whatsNext') }}</h2>
 
     <h2 class="title">{{ $t('lang.getIntoTouch') }}</h2>
@@ -30,15 +10,37 @@ onMounted(async () => {
   </section>
 </template>
 
+<script setup>
+
+const { observeElement } = useIntersectionObserver();
+const email = useAppConfig().email;
+const { locale } = useI18n();
+
+const contactStatment = ref(null);
+const container = ref(null);
+
+
+const fetchcontact = async () => {
+  const contactStatmentData = await queryContent(`/${locale.value}/contact`).findOne();
+  contactStatment.value = contactStatmentData || null;
+};
+
+onMounted(async () => {
+  await fetchcontact();
+  observeElement(container.value);
+});
+</script>
 
 <style lang="scss" scoped>
-
-
-
 .contact-section {
+  
   max-width: 600px;
   margin: 0 auto 100px;
   text-align: center;
+
+  @media (prefers-reduced-motion: no-preference) {
+    @include revealingInit;
+  }
 
   @media (max-width: 768px) {
     margin: 0 auto 50px;
@@ -71,5 +73,4 @@ onMounted(async () => {
     margin-top: 50px;
   }
 }
-
 </style>

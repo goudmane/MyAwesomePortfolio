@@ -1,5 +1,5 @@
 <template>
-  <section class="JobsSection" id="jobs" ref="revealContainer">
+  <section id="jobs" class="jobs-section" ref="container">
     <h2 class="numbered-heading">{{ $t('lang.whereIveWorked') }}</h2>
 
     <div class="inner">
@@ -34,14 +34,13 @@
 
 <script setup>
 
-
+const { observeElement } = useIntersectionObserver();
 const { locale } = useI18n();
 
+const container = ref(null);
 const activeTabId = ref(0)
 const jobsData = ref([]);
 
-
-// Function to fetch job data based on the current locale
 const fetchJobsData = async () => {
   const dataJobs = await queryContent(`/${locale.value}/jobs`).sort({ 'date': -1 }).find();
   jobsData.value = dataJobs;
@@ -49,6 +48,7 @@ const fetchJobsData = async () => {
 
 onMounted(async () => {
   await fetchJobsData();
+  observeElement(container.value);
 });
 
 
@@ -57,38 +57,17 @@ function setActiveTabId(index) {
   activeTabId.value = index
 }
 
-function onKeyDown(event) {
-  // Navigation logic here, if required
-}
-
-/* function renderHtml(node) {
-
-  if (!node || node.length === 0) {
-    console.error("renderHtml node passed is null");
-    return '';
-  }
-
-  return node.map(n => {
-
-    if (n.type === 'text') {
-      return n.value;
-    }
-
-    if (n.type === 'element') {
-      const childrenHtml = this.renderHtml(n.children || []);
-      return `<${n.tag}>${childrenHtml}</${n.tag}>`;
-    }
-
-    return '';
-
-  }).join('');
-} */
 </script>
 
 
 <style lang="scss" scoped>
-.JobsSection {
+.jobs-section {
+
   max-width: 700px;
+
+  @media (prefers-reduced-motion: no-preference) {
+    @include revealingInit;
+  }
 
   .inner {
     display: flex;
@@ -97,7 +76,6 @@ function onKeyDown(event) {
       display: block;
     }
 
-    // Prevent container from jumping
     @media (min-width: 700px) {
       min-height: 340px;
     }

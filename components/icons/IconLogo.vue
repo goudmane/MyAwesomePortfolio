@@ -20,8 +20,6 @@
 <style lang="scss" scoped>
 .logo {
   @include flexCenter;
-  /* Explicitly include flexCenter mixin */
-
   a {
     color: $gold;
     width: 42px;

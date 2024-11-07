@@ -6,7 +6,7 @@ export const useLoaderStore = defineStore('loader', {
   }),
   actions: {
     setLoading(newVal: boolean) {
-        this.loading = newVal; // Ensure this triggers reactivity
+        this.loading = newVal; 
     },
   }
 });

@@ -1,13 +1,13 @@
 ---
-date: '2020/01/01'
+date: '2020/09/01'
 title: 'Full Stack Developer'
 company: 'SOMAN'
 location: 'Marrakech, Morocco'
-range: '“01/2020 | 02-2022”'
+range: '“09-2020 - 02-2022”'
 url: 'https://soman.ma/'
 ---
 
-- Developed a highly interactive web solution for the E-learning platforms "Connect", "Reviz", and "Pixel-Junior".
-- Built two mobile applications using the Ionic Framework and web application APIs for "Connect & Reviz" with PHP.
-- Built, developed, tested, and debugged various applications and solutions created with different technologies.
-- Tested sites across various browsers and mobile devices to ensure cross-browser compatibility and responsiveness.
+- Developed an interactive web solution for e-learning platforms "Connect," "Reviz," and "Pixel-Junior".
+- Built two mobile applications using the Ionic Framework and developed web APIs for "Connect" and "Reviz" in PHP.
+- Created, tested, and debugged various applications and solutions across multiple technologies.
+- Conducted cross-browser and mobile testing to ensure compatibility and responsiveness.

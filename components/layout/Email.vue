@@ -1,27 +1,18 @@
 <template>
-  <Side :isHome="isHome" orientation="right">
+  <Side orientation="right">
     <div class="styled-link-wrapper">
       <a :href="`mailto:${email}`">{{ email }}</a>
     </div>
   </Side>
 </template>
 
-<script setup lang="ts">
-import Side from '@/components/layout/Side.vue';
+<script setup>
+
 const email = useAppConfig().email;
-
-const props = defineProps({
-  isHome: {
-    type: Boolean,
-    default: false,
-  },
-});
-
 
 </script>
 
 <style lang="scss" scoped>
-/* StyledLinkWrapper equivalent */
 .styled-link-wrapper {
   display: flex;
   flex-direction: column;

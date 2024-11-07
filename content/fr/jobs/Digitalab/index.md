@@ -1,14 +1,15 @@
 ---
-date: '2019/03/01'
-title: 'Développeur “Freelancer”'
+date: '2019/01/01'
+title: 'Développeur Full Stack'
 company: 'DIGITALAB'
-location: 'Maroc'
-range: '“2019 - 2020”'
+location: 'Marrakech, MAROC'
+range: '“01-2019 - 09-2020”'
 url: 'https://www.digitalab.ma/'
 ---
 
-- Développement et maintenance du code pour l'utilisation de PHP, HTML, CSS, Sass, JavaScript et jQuery.
-- Réalisation de plusieurs sites wordpress.
-- Construit et développé une plate-forme Web hautement interactive pour les services logistiques "TIZLA".
-- Construit et développé une plate-forme Web hautement interactive pour SAAS "MAWIIDI".
-- Sites testés sur divers navigateurs et appareils mobiles pour assurer la compatibilité et la réactivité entre navigateurs.
+- Développé et maintenu du code en PHP, HTML, CSS, Sass, JavaScript et jQuery sur plusieurs projets.
+- Construit des plateformes web performantes comme "TIZLA" (logistique) et "MAWIIDI" (SaaS), axées sur l'engagement utilisateur.
+- Créé des sites WordPress adaptés aux besoins clients et aux normes de l'industrie.
+- Garantit la compatibilité et la réactivité sur différents navigateurs et appareils mobiles.
+- Contribué à une solution immersive pour trois plateformes d'e-learning, incluant deux applications mobiles (Ionic) et des APIs.
+- Optimisé et dépanné des applications sur diverses technologies, garantissant des solutions résilientes et de haute qualité.

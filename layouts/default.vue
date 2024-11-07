@@ -1,11 +1,26 @@
+<template>
+  <div id="root">
+    <a class="skip-to-content" href="#content">Skip to Content</a>
+    
+    <Loader v-if="isLoading" />
+
+    <div v-else class="styled-content">
+      <Nav />
+      <Social />
+      <Email />
+      
+      <div id="content">  
+        <slot></slot>
+      </div>
+      <Footer />
+    </div>
+  
+  </div>
+</template>
+
 <script setup lang="ts">
-import { ref, onMounted, watch } from 'vue';
-import { useRoute } from 'vue-router';
 
 
-const route = useRoute();
-
-const isHome = ref(true);
 const loaderStore = useLoaderStore();
 const isLoading = computed(() => loaderStore.loading);
 
@@ -21,29 +36,9 @@ const handleExternalLinks = () => {
 
 </script>
 
-<template>
-  <div id="root">
-    <a class="skip-to-content" href="#content">Skip to Content</a>
-    
-    <Loader v-if="isLoading && isHome && true" />
-
-    <div v-else class="styledContent">
-      <Nav />
-      <Social :isHome="isHome" />
-      <Email :isHome="isHome" />
-      
-      <div id="content">  
-        <slot></slot>
-      </div>
-      <Footer />
-    </div>
-  
-  </div>
-</template>
-
 <style lang="scss" scoped>
 
-div.styledContent {
+div.styled-content {
   display: flex;
   flex-direction: column;
   min-height: 100vh;

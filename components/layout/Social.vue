@@ -1,5 +1,5 @@
 <template>
-  <Side :isHome="isHome" orientation="left">
+  <Side orientation="left">
     <ul class="styled-social-list">
       <li v-for="(item, index) in socialMedia" :key="index">
         <a :href="item.url" :aria-label="item.name" target="_blank" rel="noreferrer">
@@ -10,18 +10,10 @@
   </Side>
 </template>
 
-<script setup lang="ts">
+<script setup>
 
-const config = useAppConfig();
-const socialMedia = config.socialMedia;
+const socialMedia = useAppConfig().socialMedia;
 
-// Define props
-const props = defineProps({
-  isHome: {
-    type: Boolean,
-    default: false,
-  },
-});
 </script>
 
 <style lang="scss" scoped>

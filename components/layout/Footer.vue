@@ -1,9 +1,3 @@
-<script setup lang="ts">
-
-const socialMedia = useAppConfig().socialMedia;
-</script>
-
-
 <template>
   <footer class="footer">
     <div class="social-links">
@@ -25,6 +19,11 @@ const socialMedia = useAppConfig().socialMedia;
     </div>
   </footer>
 </template>
+
+<script setup>
+
+const socialMedia = useAppConfig().socialMedia;
+</script>
 
 
 <style lang="scss" scoped>

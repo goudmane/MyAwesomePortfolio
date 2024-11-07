@@ -25,8 +25,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, nextTick } from 'vue';
-/* import { useOnClickOutside } from '@vueuse/core'; */
 
 const isMenuOpen = ref(false);
 const buttonRef = ref(null);
@@ -273,7 +271,6 @@ useOnClickOutside(wrapperRef, () => {
 
     :deep(.resume-button) {
         @include smallButton;
-        /* Explicitly include the smallButton mixin */
         margin: 0px 15px 30px;
         font-size: $fz-xs;
     }

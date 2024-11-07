@@ -1,6 +1,4 @@
 <script setup lang="ts">
-/* const runtimeConfig = useRuntimeConfig() */
-const appConfig = useAppConfig()
 
 useSeoMeta({
   title: 'Goudmane Oualid',

@@ -1,14 +1,11 @@
 <script setup lang="ts">
 
-const styledMainContainer = {
-/*   counterReset: 'section', */
-};
 
 </script>
 
 <template>
   <NuxtLayout>
-    <main class="fillHeight" :style="styledMainContainer">
+    <main class="fill-height">
       <Hero />
       <About />
       <Jobs />
