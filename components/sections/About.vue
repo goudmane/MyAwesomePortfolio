@@ -1,10 +1,9 @@
 <template>
-  <section ref="container" class="about-section content">
+  <section id="about" ref="container" class="about-section content">
     <h2 class="numbered-heading">{{ $t('lang.aboutMe') }}</h2>
 
     <div class="inner">
       <div class="text">
-        <!-- <div v-html="renderHtml(aboutContent)"/> -->
         <ContentRendererMarkdown :value="about" v-if="about" />
         <ul class="skills-list">
           <li v-for="(skill, i) in skills" :key="i">{{ skill }}</li>
@@ -15,27 +14,19 @@
         <div class="wrapper">
           <img src="public/static/me.jpeg" alt="Goudmane Oualid Picture" class="img" />
         </div>
-        <!-- <div class="hex">
-          <div class="hex-border">
-            <div class="hex-background">
-              <img src="public/static/me.jpeg" alt="Goudmane Oualid Picture" class="img" />
-            </div>
-          </div>
-        </div> -->
-
       </div>
     </div>
   </section>
 </template>
 
-<script setup lang="ts">
-import { onMounted, ref, watch } from 'vue';
+<script setup>
 
+const { observeElement } = useIntersectionObserver();
 const { locale } = useI18n();
-const container = ref<HTMLElement | null>(null);
+const container = ref(null);
 
-const about = ref<any>(null);
-const skills = ref<string[]>([]);
+const about = ref(null);
+const skills = ref([]);
 
 const fetchAboutAndSkills = async () => {
 
@@ -49,28 +40,9 @@ const fetchAboutAndSkills = async () => {
 
 onMounted(async () => {
   await fetchAboutAndSkills();
+  observeElement(container.value);
 });
 
-onMounted(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('animate-delay');
-          }, 200);
-        }
-      });
-    },
-    {
-      threshold: 0.25,
-    }
-  );
-
-  if (container.value) {
-    observer.observe(container.value);
-  }
-});
 </script>
 
 
@@ -79,26 +51,25 @@ onMounted(() => {
   display: block;
   margin: 0 auto;
   position: relative;
-  width: 440px; /* Outer width */
-  height: 394px; /* Outer height */
+  width: 440px;
+  height: 394px;
   -webkit-clip-path: polygon(25% 3.5%, 75% 3.5%, 100% 50%, 75% 96.5%, 25% 96.5%, 0% 50%);
   clip-path: polygon(25% 3.5%, 75% 3.5%, 100% 50%, 75% 96.5%, 25% 96.5%, 0% 50%);
-  background-color: $gold; /* Hexagon border color */
+  background-color: $gold;
 }
 
-/* Inner hexagon to create gap between border and image */
+
 .hex-border {
   position: absolute;
-  top: 5px; /* Gap from the border */
-  left: 5px; /* Gap from the border */
-  width: calc(100% - 10px); /* Adjust size to create the gap */
-  height: calc(100% - 10px); /* Adjust size to create the gap */
+  top: 5px;
+  left: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
   -webkit-clip-path: inherit;
   clip-path: inherit;
-  background-color: transparent; /* Inner hexagon background color */
+  background-color: transparent;
 }
 
-/* Inner hexagon for image */
 .hex-background {
   position: absolute;
   top: 1px;
@@ -107,7 +78,6 @@ onMounted(() => {
   height: calc(100% - 2px);
 }
 
-/* Image inside hexagon */
 .hex .img {
   position: absolute;
   width: 100%;
@@ -117,9 +87,14 @@ onMounted(() => {
 
 
 .about-section {
+  
   $border-radius: 50%;
   max-width: 1000px;
   margin: 0 auto;
+
+  @media (prefers-reduced-motion: no-preference) {
+    @include revealingInit;
+  }
 
   .inner {
     display: grid;
@@ -165,7 +140,7 @@ onMounted(() => {
     margin-top: 50px;
 
     .wrapper {
-      /* @include boxShadow; */
+
       display: block;
       position: relative;
       width: 100%;
@@ -221,40 +196,5 @@ onMounted(() => {
       }
     }
   }
-}
-
-.animate-delay {
-  animation: animate-delay 500ms cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  transform-origin: bottom;
-  opacity: 0;
-}
-
-@keyframes animate-delay {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-    -webkit-transform: translateY(40px);
-    -moz-transform: translateY(40px);
-    -ms-transform: translateY(40px);
-    -o-transform: translateY(40px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0);
-  }
-}
-
-.content {
-  opacity: 0;
-  transform: translateY(20px);
-  -webkit-transform: translateY(40px);
-  -moz-transform: translateY(40px);
-  -ms-transform: translateY(40px);
-  -o-transform: translateY(40px);
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
-  <section class="hero-section">
+  <section id="hero" class="hero-section">
     <TransitionGroup tag="div" name="fadeup" >
       <div 
-        v-if="!isLoading && !prefersReducedMotion"
+        v-if="!isLoading"
         v-for="(item, i) in items"
         :key="i"
         :style="{ transitionDelay: `${(i + 1) * 100}ms` }"
@@ -21,7 +21,6 @@
 const { locale } = useI18n();
 
 const isMounted = ref(false);
-const prefersReducedMotion = ref(false);
 const loaderStore = useLoaderStore();
 
 const items = ref<any[]>([]);
@@ -34,7 +33,6 @@ const fetchHeroData = async () => {
 
 
 onMounted(async () => {
-  prefersReducedMotion.value = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   await fetchHeroData();
   isMounted.value = true;
 });

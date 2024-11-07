@@ -7,7 +7,6 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
 import anime from 'animejs';
 
 const loaderStore = useLoaderStore();

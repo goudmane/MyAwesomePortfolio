@@ -113,7 +113,7 @@ main {
         padding: 125px 25px;
     }
 
-    &.fillHeight {
+    &.fill-height {
         counter-reset: section;
         padding: 0 150px;
 
@@ -130,6 +130,7 @@ main {
         }
     }
 }
+
 
 section {
     margin: 0 auto;
@@ -168,7 +169,6 @@ h2.big-heading::first-letter {
 
 .medium-heading {
     margin: 0;
-    /* font-size: clamp(40px, 8vw, 60px); */
     font-size: clamp(20px, 4vw, 40px);
 }
 

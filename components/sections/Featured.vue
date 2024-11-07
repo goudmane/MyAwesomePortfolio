@@ -1,9 +1,9 @@
 <template>
   <section id="projects" class="projects-section">
-    <h2 class="numbered-heading">{{ $t('lang.someOfMyWorks') }}</h2>
+    <h2 class="numbered-heading" :ref="setItemRef">{{ $t('lang.someOfMyWorks') }}</h2>
 
     <ul class="projects-grid">
-      <li v-for="(project, index) in featuredProjectsData" :key="index" class="project">
+      <li v-for="(project, index) in featuredProjectsData" :key="index" class="project" :ref="setItemRef">
         <div class="project-content">
           <p class="project-overline">{{ $t('lang.featuredProject') }}</p>
           <h3 class="project-title">
@@ -36,11 +36,12 @@
 </template>
 
 
-<script setup lang="ts">
-import { ref, onMounted } from 'vue';
+<script setup>
 
+const { observeElement } = useIntersectionObserver();
 const { locale } = useI18n();
-const featuredProjectsData = ref<any>(null);
+const featuredProjectsData = ref(null);
+const observedElements = [];
 
 const fetchFeaturedProjects = async () => {
   const featuredProjects = await queryContent(`/${locale.value}/featured`).sort({ 'order': 1 }).find();
@@ -52,11 +53,21 @@ onMounted(async () => {
     await fetchFeaturedProjects();
   });
 });
+
+const setItemRef = (el) => {
+  observeElement(el);
+};
 </script>
 
 
 <style lang="scss" scoped>
 .projects-section {
+  h2 {
+    @media (prefers-reduced-motion: no-preference) {
+      @include revealingInit;
+    }
+  }
+
   ul {
     @include resetList;
 
@@ -67,11 +78,16 @@ onMounted(async () => {
   }
 
   .project {
+    
     position: relative;
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
+    
+    @media (prefers-reduced-motion: no-preference) {
+      @include revealingInit;
+    }
 
     @media (max-width: 768px) {
       @include boxShadow;
