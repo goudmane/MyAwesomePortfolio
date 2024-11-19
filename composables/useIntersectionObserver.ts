@@ -1,3 +1,7 @@
+interface UseIntersectionObserverOptions {
+    delay?: number;
+    options?: IntersectionObserverInit;
+}
 export function useIntersectionObserver({
     options = { threshold: 0.25 },
 }: UseIntersectionObserverOptions = {}) {
