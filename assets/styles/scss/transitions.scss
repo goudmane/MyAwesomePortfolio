@@ -109,12 +109,16 @@
 
     /*  ################################################# */
 
-    $fade-duration: 0.9s;
-    $fade-in-duration: 0.8s;
-    $fade-timing-function-bottom: cubic-bezier(0.550, 0.055, 0.675, 0.190);
-    $fade-timing-function-top: cubic-bezier(0.250, 0.460, 0.450, 0.940);
-    $fade-in-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000);
+    $fade-duration: 0.5s;
+    $fade-in-duration: 0.4s;
+    $fade-timing-function-bottom: cubic-bezier(0.645, 0.045, 0.355, 1);
+    $fade-timing-function-top: cubic-bezier(0.645, 0.045, 0.355, 1);
+    $fade-in-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
     $translate-distance: 70px;
+
+   /*  .fade-in-bottom, .fade-in-top, .fade-out-top, .fade-out-bottom {
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    } */
 
     @-webkit-keyframes fade-out-bottom {
         0% {
@@ -145,8 +149,8 @@
     }
 
     .fade-out-bottom {
-        -webkit-animation: fade-out-bottom $fade-duration $fade-timing-function-bottom both;
-        animation: fade-out-bottom $fade-duration $fade-timing-function-bottom both;
+        -webkit-animation: fade-out-bottom $fade-duration $fade-timing-function-bottom forwards;
+        animation: fade-out-bottom $fade-duration $fade-timing-function-bottom forwards;
     }
 
     @-webkit-keyframes fade-out-top {
@@ -178,8 +182,8 @@
     }
 
     .fade-out-top {
-        -webkit-animation: fade-out-top $fade-duration $fade-timing-function-top both;
-        animation: fade-out-top $fade-duration $fade-timing-function-top both;
+        -webkit-animation: fade-out-top $fade-duration $fade-timing-function-top forwards;
+        animation: fade-out-top $fade-duration $fade-timing-function-top forwards;
     }
 
     @-webkit-keyframes fade-in-bottom {
@@ -211,8 +215,8 @@
     }
 
     .fade-in-bottom {
-        -webkit-animation: fade-in-bottom $fade-in-duration $fade-in-timing-function both;
-        animation: fade-in-bottom $fade-in-duration $fade-in-timing-function both;
+        -webkit-animation: fade-in-bottom $fade-in-duration $fade-in-timing-function forwards;
+        animation: fade-in-bottom $fade-in-duration $fade-in-timing-function forwards;
     }
 
     @-webkit-keyframes fade-in-top {
@@ -244,8 +248,8 @@
     }
 
     .fade-in-top {
-        -webkit-animation: fade-in-top $fade-in-duration $fade-in-timing-function both;
-        animation: fade-in-top $fade-in-duration $fade-in-timing-function both;
+        -webkit-animation: fade-in-top $fade-in-duration $fade-in-timing-function forwards;
+        animation: fade-in-top $fade-in-duration $fade-in-timing-function forwards;
     }
 
 }
