@@ -11,5 +11,4 @@ url: 'https://www.digitalab.ma/'
 - Construit des plateformes web performantes comme "TIZLA" (logistique) et "MAWIIDI" (SaaS), axées sur l'engagement utilisateur.
 - Créé des sites WordPress adaptés aux besoins clients et aux normes de l'industrie.
 - Garantit la compatibilité et la réactivité sur différents navigateurs et appareils mobiles.
-- Contribué à une solution immersive pour trois plateformes d'e-learning, incluant deux applications mobiles (Ionic) et des APIs.
 - Optimisé et dépanné des applications sur diverses technologies, garantissant des solutions résilientes et de haute qualité.

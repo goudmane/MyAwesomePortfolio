@@ -7,7 +7,7 @@ range: '“09/2023 - 11/2024”'
 url: '#'
 ---
 
-- Developed a robust "Réseau Associer" web application using Laravel, Vue.js, and Docker.
-- Mastered Eloquent ORM for efficient database interactions and Vue.js for building reactive user interfaces.
-- Implemented a relational database with meticulous migrations to ensure consistent structure.
-- Demonstrated a strong commitment to collaborative projects by integrating technical expertise to deliver innovative, high-quality solutions.
+- Développement d'une application web robuste "Réseau Associer" en utilisant Laravel, Vue.js et Docker.
+- Maîtrise de l'ORM Eloquent pour des interactions efficaces avec la base de données et de Vue.js pour la création d'interfaces utilisateur réactives.
+- Mise en place d'une base de données relationnelle avec des migrations rigoureuses pour garantir une structure cohérente.
+- Démonstration d'un engagement fort dans les projets collaboratifs en intégrant une expertise technique pour livrer des solutions innovantes et de haute qualité.

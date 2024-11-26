@@ -13,8 +13,9 @@ const props = defineProps({
     },
 });
 
+const withATS = " ATS"
 const { locale } = useI18n();
-const resumeLink = computed(() => `/static/pdf/Goudmane Oualid ${locale.value}.pdf`);
+const resumeLink = computed(() => `/static/pdf/Goudmane Oualid${withATS} ${locale.value}.pdf`);
 </script>
 
 <style scoped>
