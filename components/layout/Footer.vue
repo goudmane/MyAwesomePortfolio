@@ -58,7 +58,7 @@ const socialMedia = useAppConfig().socialMedia;
 
     a {
       padding: 10px;
-      
+
       svg {
         width: 20px;
         height: 20px;
@@ -78,9 +78,11 @@ const socialMedia = useAppConfig().socialMedia;
   }
 }
 
-.bchiang7{
-  &:hover, &:focus {
-      color: #64ffda;
+.bchiang7 {
+
+  &:hover,
+  &:focus {
+    color: #64ffda;
   }
 }
 </style>
