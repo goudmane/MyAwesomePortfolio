@@ -2,7 +2,7 @@
 date: '2020/09/01'
 title: 'Développeur Full Stack'
 company: 'SOMAN'
-location: 'Marrakech, Maroc (En présentiel)'
+location: 'Marrakech, Maroc (Présentiel)'
 range: '“09-2020 - 02-2022”'
 url: 'https://soman.ma/'
 ---

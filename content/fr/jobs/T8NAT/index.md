@@ -2,7 +2,7 @@
 date: '2024/12/01'
 title: 'Développeur Full Stack'
 company: 'T8NAT'
-location: 'Riyadh, Arabie saoudite (À distance)'
+location: 'Riyadh, Arabie saoudite (Télétravail)'
 range: '“12/2024 - 03/2025”'
 url: 'https://github.com/T8NAT'
 ---
