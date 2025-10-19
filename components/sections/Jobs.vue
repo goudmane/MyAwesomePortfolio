@@ -22,7 +22,7 @@
               <a :href="job.url" class="inline-link">&nbsp;@{{ job.company }}</a>
             </span>
           </h3>
-          <p class="range">{{ $t('lang.range') }}: {{ job.range }}</p>
+          <p class="range">{{ $t('lang.range') }}: {{ job.range }} // {{ job.location }}</p>
           <ContentRendererMarkdown :value="job" v-if="job" />
           <!-- <div v-html="renderHtml(job.body.children)"></div> -->
         </div>
