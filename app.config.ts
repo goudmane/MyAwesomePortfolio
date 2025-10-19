@@ -11,11 +11,6 @@ export default defineAppConfig({
       url: 'https://github.com/goudmane',
     },
     {
-      name: 'Twitter',
-      icon: 'icon-park-outline:twitter',
-      url: 'https://twitter.com/o_goudmane',
-    },
-    {
       name: 'Linkedin',
       icon: 'icon-park-outline:instagram-one',
       url: 'https://www.linkedin.com/in/o-goudmane',
