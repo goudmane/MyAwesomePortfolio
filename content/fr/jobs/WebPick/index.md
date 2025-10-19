@@ -2,7 +2,7 @@
 date: '2023/02/01'
 title: 'Développeur Full Stack'
 company: 'WebPick'
-location: 'Marrakech, MAROC'
+location: 'Marrakech, Maroc (En présentiel)'
 range: '“02/2023 - 09/2023”'
 url: 'https://webpick.info/'
 ---

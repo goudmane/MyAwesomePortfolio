@@ -2,7 +2,7 @@
 date: '2022/02/01'
 title: 'Full Stack Developer'
 company: 'ALLYOUNEED'
-location: 'Marrakech, Morocco'
+location: 'Marrakech, Morocco (Onsite)'
 range: '“02-2022 - 09-2022”'
 url: '#'
 ---

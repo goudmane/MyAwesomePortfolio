@@ -2,7 +2,7 @@
 date: '2023/09/01'
 title: 'Développeur Full Stack'
 company: 'AUCENI'
-location: 'Marrakech, MAROC'
+location: 'Marrakech, Maroc (Hybride)'
 range: '“09/2023 - 11/2024”'
 url: '#'
 ---

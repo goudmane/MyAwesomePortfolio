@@ -2,7 +2,7 @@
 date: '2022/09/01'
 title: 'Full Stack Developer'
 company: 'Soorcin'
-location: 'Marrakech, MOROCCO'
+location: 'Marrakech, Morocco (Remote)'
 range: '“09/2022 - 03/2023”'
 url: 'https://soorcin.com/'
 ---

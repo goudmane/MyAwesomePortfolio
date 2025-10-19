@@ -2,7 +2,7 @@
 date: '2019/01/01'
 title: 'Full Stack Developer'
 company: 'DIGITALAB'
-location: 'Marrakech, MOROCCO'
+location: 'Marrakech, Morocco (Remote)'
 range: '“01-2019 - 09-2020”'
 url: 'https://www.digitalab.ma/'
 ---

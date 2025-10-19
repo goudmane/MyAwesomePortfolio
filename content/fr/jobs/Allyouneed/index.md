@@ -2,7 +2,7 @@
 date: '2022/02/01'
 title: 'Développeur Full Stack'
 company: 'ALLYOUNEED'
-location: 'Marrakech, Maroc'
+location: 'Marrakech, Maroc (Hybride)'
 range: '“02-2022 - 09-2022”'
 url: '#'
 ---

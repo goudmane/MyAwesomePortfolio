@@ -2,7 +2,7 @@
 date: '2020/09/01'
 title: 'Full Stack Developer'
 company: 'SOMAN'
-location: 'Marrakech, Morocco'
+location: 'Marrakech, Morocco (Onsite)'
 range: '“09-2020 - 02-2022”'
 url: 'https://soman.ma/'
 ---
