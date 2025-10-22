@@ -9,3 +9,4 @@ url: 'https://github.com/T8NAT'
 
 - Developed, and maintained multiple web applications using Laravel.
 - Backend improvements, ensuring scalability and user-friendly interfaces.
+- Upgraded all dependencies of an existing Laravel project, refactored code to maintain compatibility, and successfully deployed the updated system ensuring stability and performance.

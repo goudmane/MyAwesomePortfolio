@@ -63,7 +63,8 @@ function setActiveTabId(index) {
 <style lang="scss" scoped>
 .jobs-section {
 
-  max-width: 700px;
+  margin: 0 auto;
+  max-width: 1000px;
 
   @media (prefers-reduced-motion: no-preference) {
     @include revealingInit;
@@ -78,6 +79,7 @@ function setActiveTabId(index) {
 
     @media (min-width: 700px) {
       min-height: 340px;
+      margin-inline: 100px;
     }
   }
 
